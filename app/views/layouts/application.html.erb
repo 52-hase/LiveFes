@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+    <!-- 追加したCSS -->
+    <style>
+      header {
+        background-color: #3366ff; /* ヘッダーの背景色 */
+        color: white; /* テキストの色 */
+        padding: 10px; /* 上下左右の余白 */
+      }
+
+      nav ul {
+        list-style: none; /* リストのマーカーを非表示 */
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline-block; /* リスト項目を横並びにする */
+        margin-right: 10px; /* 項目の間隔 */
+      }
+
+      nav ul li a {
+        color: white; /* リンクのテキスト色 */
+        text-decoration: none; /* リンクの下線を非表示 */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 共通のヘッダー -->
+    <header>
+      <!-- ここにヘッダーのコンテンツを追加 -->
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <!-- 他のページへのリンクを追加 -->
+        </ul>
+      </nav>
+    </header>
+
+    <%= yield %>
+  </body>
+</html>

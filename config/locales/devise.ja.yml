@@ -1,0 +1,31 @@
+ja:
+  devise:
+    registrations:
+      new:
+        sign_up: "新規作成"
+        email: "メールアドレス"
+        name: "名前"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        sign_up_button: "新規作成"
+    sessions:
+      new:
+        log_in: "ログイン"
+        email: "メールアドレス"
+        password: "パスワード"
+        remember_me: "ログイン情報を保存する"
+        sign_in: "ログイン"
+    passwords:
+      new:
+        forgot_your_password: "パスワードを忘れましたか？"
+        email: "メールアドレス"
+        send_instructions_button: "パスワードリセットの手順を送信する"
+    confirmations:
+      new:
+        didn't_receive_confirmation_instructions: "確認メールを受け取っていませんか？"
+    unlocks:
+      new:
+        didn't_receive_unlock_instructions: "アカウントロック解除メールを受け取っていませんか？"
+    omniauth_callbacks:
+      new:
+        sign_in_with_provider: "%{provider}でサインイン"

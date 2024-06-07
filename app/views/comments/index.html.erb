@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-color: #0047AB;">
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+      <div class="card border-primary custom-card-height">                    <%# css追記縦幅 #%>
+        <div class="card-header bg-primary text-white">
+          <h1 class="mb-0 text-center">ライブアプリ</h1>
+        </div>
+        <div class="card-body">
+          <% if user_signed_in? %>
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">
+                <%= current_user.name %>さん、お帰りなさい!
+              </h4>
+              <p>メールアドレス: <%= current_user.email %></p>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+            </div>
+          <% else %>
+            <div class="jumbotron">
+            <p class="lead" style="text-align: center;">アプリの説明</p>
+              <div class="d-flex flex-column margin-top-large">                <%# css追記ボタンの高さ #%>
+                <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary btn-lg btn-block mb-2 mx-auto" %>
+                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-success btn-lg btn-block mx-auto" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

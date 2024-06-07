@@ -1,0 +1,10 @@
+ja:
+  hello: "こんにちは"
+  devise:
+    sessions:
+      new:
+        log_in: "ログイン"
+        email: "メールアドレス"
+        password: "パスワード"
+        remember_me: "ログイン情報を保存する"
+        sign_in: "ログイン"
