@@ -13,7 +13,7 @@ ja:
         log_in: "ログイン"
         email: "メールアドレス"
         password: "パスワード"
-        remember_me: "ログイン情報を保存する"
+        remember_me: "ログインの情報を保存する"
         sign_in: "ログイン"
     passwords:
       new:
