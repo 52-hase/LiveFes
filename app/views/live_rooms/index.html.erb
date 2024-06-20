@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="text-center my-4">Live Chat Rooms</h1>
+
+  <%= form_with model: LiveRoom.new, local: true, class: "mb-4" do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <%= form.submit "Create Room", class: "btn btn-primary" %>
+  <% end %>
+
+  <ul class="list-group">
+    <% @live_rooms.each do |live_room| %>
+      <li class="list-group-item">
+        <%= link_to live_room.name, live_room_path(live_room), class: "text-decoration-none" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

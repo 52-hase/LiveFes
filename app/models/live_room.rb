@@ -1,0 +1,2 @@
+class LiveRoom < ApplicationRecord
+end

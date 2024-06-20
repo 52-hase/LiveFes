@@ -1,0 +1,16 @@
+<div class="container mt-5 d-flex flex-column align-items-center" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+  <h1 class="text-center mb-4" style="color: #007bff;">Chat Room</h1>
+  <div class="form-group mr-2 d-flex">
+    <input type="text" class="form-control" id="chat-input" placeholder="コメント" style="border-radius: 20px 0 0 20px;" />
+    <button id="button" class="btn btn-primary" style="border-radius: 0 20px 20px 0;">送信</button>
+  </div>
+  <div id="messages" style="margin-top: 20px; width: 100%;">
+    <ul class="list-group">
+      <%= render @messages %>
+    </ul>
+  </div>
+</div>
+
+<% content_for :meta_tags do %>
+  <meta name="live_room_id" content="<%= @live_room.id %>">
+<% end %>
