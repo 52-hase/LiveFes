@@ -1,19 +1,30 @@
 <div class="container">
-  <h1 class="text-center my-4">Live Chat Rooms</h1>
+  <h1 class="text-center my-4">ルーム作成のページ</h1>
 
-  <%= form_with model: LiveRoom.new, local: true, class: "mb-4" do |form| %>
-    <div class="mb-3">
-      <%= form.label :name, class: "form-label" %>
-      <%= form.text_field :name, class: "form-control" %>
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2 class="mb-0">新しいルームを作成</h2>
     </div>
-    <%= form.submit "Create Room", class: "btn btn-primary" %>
-  <% end %>
+    <div class="card-body">
+      <%= form_with model: LiveRoom.new, local: true, class: "mb-4" do |form| %>
+        <div class="mb-3">
+          <%= form.text_field :name, class: "form-control", placeholder: "ルーム名を入力してください" %>
+        </div>
+        <%= form.submit "作成", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 
-  <ul class="list-group">
-    <% @live_rooms.each do |live_room| %>
-      <li class="list-group-item">
-        <%= link_to live_room.name, live_room_path(live_room), class: "text-decoration-none" %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="mb-0">ルーム一覧</h2>
+    </div>
+    <div class="list-group list-group-flush">
+      <% @live_rooms.each do |live_room| %>
+        <a href="<%= live_room_path(live_room) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <%= live_room.name %>
+        </a>
+      <% end %>
+    </div>
+  </div>
 </div>
