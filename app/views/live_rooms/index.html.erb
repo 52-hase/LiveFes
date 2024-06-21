@@ -1,23 +1,7 @@
 <div class="container">
-  <h1 class="text-center my-4">ルーム作成のページ</h1>
-
-  <div class="card mb-4">
-    <div class="card-header">
-      <h2 class="mb-0">新しいルームを作成</h2>
-    </div>
-    <div class="card-body">
-      <%= form_with model: LiveRoom.new, local: true, class: "mb-4" do |form| %>
-        <div class="mb-3">
-          <%= form.text_field :name, class: "form-control", placeholder: "ルーム名を入力してください" %>
-        </div>
-        <%= form.submit "作成", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-
   <div class="card">
     <div class="card-header">
-      <h2 class="mb-0">ルーム一覧</h2>
+      <h2 class="mb-0">ルーム一覧修正</h2>
     </div>
     <div class="list-group list-group-flush">
       <% @live_rooms.each do |live_room| %>

@@ -1,11 +1,12 @@
 <div class="container">
   <% if user_signed_in? %>
     <!-- ユーザーがログインしている時の処理 -->
-    <h1 class="text-center my-4">リンクのページ</h1>
+    <h1 class="text-center my-4">リンクのページ修正</h1>
       <div class="d-grid gap-3">
-        <%= link_to "ルーム作成", "/live_rooms", class: 'btn btn-outline-primary btn-lg' %>
+        <%= link_to "ルーム一覧", "/live_rooms", class: 'btn btn-outline-primary btn-lg' %>
         <%= link_to "曲のダウンロード", "/download", class: 'btn btn-outline-danger btn-lg' %>
         <%= link_to "マイページ", "/mypage", class: 'btn btn-outline-success btn-lg' %>
+        <%= link_to "ルーム作成", new_live_room_path, class: 'btn btn-outline-primary btn-lg' %>
       </div>
   <% else %>
     <!-- ユーザーがログインしていない時の処理 -->

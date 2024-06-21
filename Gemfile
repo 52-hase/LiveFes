@@ -71,3 +71,4 @@ end
 gem 'devise'
 
 gem 'letter_opener_web', '~> 3.0'
+
