@@ -5,7 +5,7 @@ class LiveRoomsController < ApplicationController
   
   def show
     @live_room = LiveRoom.find(params[:id])
-    @messages = @live_room.messages
+    @messages = @live_room.messages.includes(:user)  # メッセージと関連するユーザーを事前にロード
   end
   
   def create

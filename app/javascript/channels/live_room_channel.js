@@ -7,7 +7,13 @@ function getLiveRoomIdFromUrl() {
   return id;
 }
 
+// ログイン中のユーザーIDを取得する関数（例として）
+function getUserId() {
+  return document.getElementById('user-id').dataset.userId;
+}
+
 const liveRoomId = getLiveRoomIdFromUrl();  // URLからlive_room_idを取得
+const userId = getUserId();  // ユーザーIDを取得
 
 const App = {};  // Appオブジェクトを定義
 
@@ -27,7 +33,7 @@ App.room = consumer.subscriptions.create({ channel: "LiveRoomChannel", live_room
   },
 
   speak: function(content) {
-    return this.perform('speak', {message: content, live_room_id: liveRoomId});
+    return this.perform('speak', {message: content, live_room_id: liveRoomId, user_id: userId});
   }
 });
 
