@@ -17,7 +17,6 @@
       padding: 10px; /* 上下左右の余白 */
       position: -webkit-sticky; /* Safari用 */
       position: sticky; /* 固定するためのプロパティ */
-      top: 0; /* 上部に固定 */
       z-index: 1000; /* 他の要素より前面に表示 */
     }
 
@@ -36,9 +35,18 @@
       color: white; /* リンクのテキスト色 */
       text-decoration: none; /* リンクの下線を非表示 */
     }
+
+    /* 画面全体に背景画像を設定 */
+    body {
+      background-image: url('<%= asset_path("concert_background.jpg") %>');
+      background-size: cover; /* 画像をカバーさせる */
+      background-position: center; /* 中心に配置 */
+      background-repeat: no-repeat; /* 繰り返しを防ぐ */
+      height: 100vh; /* 画面全体の高さを確保 */
+      margin: 0; /* 余白をなくす */
+    }
   </style>
 </head>
-
 <body>
   <!-- 共通のヘッダー -->
   <header class="sticky-top">
