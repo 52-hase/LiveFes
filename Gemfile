@@ -73,3 +73,5 @@ gem 'devise'
 gem 'letter_opener_web', '~> 3.0'
 
 gem 'dotenv-rails'
+
+gem 'bootstrap', '~> 5.3.3'
