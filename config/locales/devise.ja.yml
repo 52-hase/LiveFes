@@ -17,7 +17,7 @@ ja:
         sign_in: "ログイン"
     passwords:
       new:
-        forgot_your_password: "パスワードを忘れましたか？"
+        forgot_your_password: "パスワードをお忘れの方"
         email: "メールアドレス"
         send_instructions_button: "パスワードリセットの手順を送信する"
     confirmations:

@@ -4,7 +4,8 @@ ja:
     sessions:
       new:
         log_in: "ログイン"
+        log_in_account: "アカウントをお持ちの方"
         email: "メールアドレス"
         password: "パスワード"
-        remember_me: "ログイン情報を保存する"
+        remember_me: "ログインの状態を維持する"
         sign_in: "ログイン"
