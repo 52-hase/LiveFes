@@ -9,3 +9,6 @@ ja:
         password: "パスワード"
         remember_me: "ログインの状態を維持する"
         sign_in: "ログイン"
+    registrations:
+      new:
+        password_min_length: "%{count} ケタ以上"
