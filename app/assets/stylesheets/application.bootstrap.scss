@@ -15,3 +15,30 @@
 :root {
   --custom-blue: #003775;
 }
+
+.list-group-flush {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: transparent; // 背景を透明に設定
+
+  .list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+    background-color: transparent; // 各アイテムの背景も透明に設定
+
+    &:hover {
+      background-color: rgba(77, 130, 183, 0.556); // ホバー時の背景色を設定（透明度あり）
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
