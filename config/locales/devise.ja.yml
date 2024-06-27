@@ -21,6 +21,12 @@ ja:
         forgot_your_password: "パスワードをお忘れの方"
         email: "メールアドレス"
         send_instructions_button: "パスワードリセットの手順を送信する"
+      edit:
+        change_password: "パスワードを変更する"
+        new_password: "新しいパスワード"
+        password_confirmation: "新しいパスワード（確認用）"
+        change_password_button: "パスワードを変更する"
+        minimum_password_length: "%{count}文字以上"
     confirmations:
       new:
         didn't_receive_confirmation_instructions: "確認メールを受け取っていませんか？"

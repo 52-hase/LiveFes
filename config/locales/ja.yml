@@ -11,13 +11,14 @@ ja:
         sign_in: "ログイン"
     registrations:
       new:
-        password_min_length: "%{count} ケタ以上"
+        password_min_length: "%{count} 文字以上"
   errors:
     messages:
       not_saved: "保存できませんでした"
       blank: "名前を入力してください"
       taken: "は既に使用されています"
       not_found: "見つかりませんでした"
+      invalid: "無効な値です"
   activerecord:
     errors:
       models:
@@ -34,4 +35,6 @@ ja:
               confirmation: "パスワードの確認が一致しません"
             name:
               taken: "この名前はすでに存在します"
+            reset_password_token:
+              invalid: "パスワードリセットトークンが無効です"
 
