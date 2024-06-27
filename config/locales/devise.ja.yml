@@ -8,6 +8,7 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード（確認用）"
         sign_up_button: "新規作成"
+        minimum_password_length: "%{count}文字以上"
     sessions:
       new:
         log_in: "ログイン"

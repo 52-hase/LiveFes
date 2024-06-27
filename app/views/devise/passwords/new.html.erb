@@ -7,7 +7,11 @@
             <h2 class="card-title text-center"><%= t('devise.passwords.new.forgot_your_password') %></h2>
             
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-              <%= render "devise/shared/error_messages", resource: resource %>
+              <% if resource.errors.any? %>
+                <% resource.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              <% end %>
             
               <div class="form-group">
                 <%= f.label :email, t('devise.passwords.new.email') %>

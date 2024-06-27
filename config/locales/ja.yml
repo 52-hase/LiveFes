@@ -12,3 +12,26 @@ ja:
     registrations:
       new:
         password_min_length: "%{count} ケタ以上"
+  errors:
+    messages:
+      not_saved: "保存できませんでした"
+      blank: "名前を入力してください"
+      taken: "は既に使用されています"
+      not_found: "見つかりませんでした"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "メールアドレスを入力してください"
+              taken: "このメールアドレスは既に使用されています"
+              not_found: "このメールアドレスは見つかりませんでした"
+            password:
+              blank: "パスワードを入力してください"
+              too_short: "パスワードは%{count}文字以上で入力してください"
+            password_confirmation:
+              confirmation: "パスワードの確認が一致しません"
+            name:
+              taken: "この名前はすでに存在します"
+
