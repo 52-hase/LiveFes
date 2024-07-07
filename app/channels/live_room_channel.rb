@@ -4,13 +4,20 @@ class LiveRoomChannel < ApplicationCable::Channel
     stream_for live_room
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
-  end
-
   def speak(data)
-    message = Message.create!(content: data['message'], user_id: data['user_id'], live_room_id: data['live_room_id'])
-    template = ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
-    LiveRoomChannel.broadcast_to(message.live_room, template)  # 特定のライブルームにブロードキャスト
+    live_room = LiveRoom.find_by(id: data['live_room_id'])
+    image_data = data['image']
+    message_content = data['message'].presence || ''
+
+    message = live_room.messages.new(content: message_content, user_id: data['user_id'])
+
+    if image_data.present?
+      decoded_image = Base64.decode64(image_data)
+      message.image.attach(io: StringIO.new(decoded_image), filename: 'uploaded_image.png')
+    end
+
+    message.save!
+      template = ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
+      LiveRoomChannel.broadcast_to(live_room, template)
   end
 end

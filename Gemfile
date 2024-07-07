@@ -75,3 +75,7 @@ gem 'letter_opener_web', '~> 3.0'
 gem 'dotenv-rails'
 
 gem 'bootstrap', '~> 5.3.3'
+
+gem 'image_processing', '~> 1.2'
+
+gem 'ruby-vips', '~> 2.0'

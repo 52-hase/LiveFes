@@ -1,8 +1,15 @@
 <li class="list-group-item">
   <div class="card">
     <div class="card-body">
-      <p class="card-text" style="font-size: 20px;"><%= message.content %></p>
-      <footer class="blockquote-footer">
+      <div class="message">
+        <p class="card-text"><%= message.content %></p>
+        <% if message.image.attached? %>
+          <div class="mt-2">
+            <img class="img-fluid" src="<%= url_for(message.image) %>" style="width: 300px; height: auto;">
+          </div>
+        <% end %>
+      </div>
+      <footer class="blockquote-footer mt-2">
         <%= message.user.name %> - <%= message.created_at.strftime("%Y-%m-%d %H:%M") %>
       </footer>
     </div>
