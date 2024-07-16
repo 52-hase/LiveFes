@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card bg-transparent border-0">
+        <div class="card-header text-center text-white">
+          <h2 class="mb-0">ユーザープロフィール</h2>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <% if @user.avatar.attached? %>
+              <%= image_tag url_for(@user.avatar), class: "rounded-circle img-thumbnail", style: "width: 150px; height: 150px; object-fit: cover;" %>
+            <% else %>
+              <div class="bg-secondary text-white rounded-circle d-inline-flex justify-content-center align-items-center" style: "width: 150px; height: 150px; font-size: 50px;">
+                <%= @user.name[0].upcase %>
+              </div>
+            <% end %>
+          </div>
+
+          <h4 class="text-center mb-3 text-white"><%= @user.name %></h4>
+          <p class="text-center text-white mb-4"><%= @user.email %></p>
+
+          <%= form_for @user, html: { class: "needs-validation", novalidate: true } do |f| %>
+            <div class="mb-3">
+              <%= f.label :氏名, class: "form-label text-white" %>
+              <%= f.text_field :name, class: "form-control text-white", required: true, style: "background-color: rgba(255, 255, 255, 0.1);" %>
+              <div class="invalid-feedback">名前を入力してください。</div>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :メールアドレス, class: "form-label text-white" %>
+              <%= f.email_field :email, class: "form-control text-white", required: true, style: "background-color: rgba(255, 255, 255, 0.1);" %>
+              <div class="invalid-feedback">有効なメールアドレスを入力してください。</div>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :アイコン, class: "form-label text-white" %>
+              <%= f.file_field :avatar, class: "form-control text-white", accept: "image/*", style: "background-color: rgba(255, 255, 255, 0.1);" %>
+            </div>
+
+            </br>
+            <div class="d-grid">
+              <%= f.submit "プロフィールを更新", class: "btn btn-outline-light" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

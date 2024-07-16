@@ -8,4 +8,6 @@ class User < ApplicationRecord
          has_many :messages
          validates :name, presence: true #これを外すと
          validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+         has_one_attached :avatar
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'comments/index'
   get '/terms', to: 'pages#terms'
   get '/privacy', to: 'pages#privacy'
+  resources :users
   resources :live_rooms do
     resources :messages, only: [:create]
   end # ルーム作成に関するルート

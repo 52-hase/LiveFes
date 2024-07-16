@@ -4,6 +4,7 @@
     <div class="d-grid gap-3 justify-content-center" , style="margin-top: 100px;">
       <%= link_to "ライブルーム一覧", "/live_rooms", class: 'btn btn-outline-primary btn-lg' , style: 'width: 500px;' %>
       <%= link_to "ライブルーム作成", new_live_room_path, class: 'btn btn-outline-primary btn-lg' , style: 'width: 500px;' %>
+      <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-primary btn-lg', style: 'width: 500px;' %>
     </div>
     <% else %>
       <!-- ユーザーがログインしていない時の処理 -->

@@ -1,6 +1,19 @@
 <li class="list-group-item">
   <div class="card">
     <div class="card-body">
+      <div class="d-flex align-items-center mb-3">
+        <% if message.user.avatar.attached? %>
+          <img class="rounded-circle img-thumbnail mr-3" src="<%= url_for(message.user.avatar) %>" style="width: 50px; height: 50px; object-fit: cover;">
+        <% else %>
+          <div class="bg-secondary text-white rounded-circle d-inline-flex justify-content-center align-items-center mr-3" style="width: 50px; height: 50px; font-size: 20px;">
+            <%= message.user.name[0].upcase %>
+          </div>
+        <% end %>
+        <div>
+          <strong><%= message.user.name %></strong>
+          <div class="text-muted"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></div>
+        </div>
+      </div>
       <div class="message">
         <p class="card-text"><%= message.content %></p>
         <% if message.image.attached? %>
@@ -9,9 +22,6 @@
           </div>
         <% end %>
       </div>
-      <footer class="blockquote-footer mt-2">
-        <%= message.user.name %> - <%= message.created_at.strftime("%Y-%m-%d %H:%M") %>
-      </footer>
     </div>
   </div>
 </li>
