@@ -7,6 +7,11 @@
             <h2 class="mb-4"><%= t('devise.sessions.new.log_in') %></h2>
           </div>
           <div class="card-body">
+            <% if flash[:alert] %>
+              <div class="animated-alert text-center">
+                <%= flash[:alert] %>
+              </div>
+            <% end %>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-group' }) do |f| %>
               <div class="form-group mb-4">
                 <%= f.label :email, t('devise.sessions.new.email'), class: 'font-weight-bold' %>

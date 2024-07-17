@@ -14,7 +14,7 @@ ja:
         password_min_length: "%{count} 文字以上"
   errors:
     messages:
-      not_saved: "保存できませんでした"
+      not_saved: "保存できませんでした。"
       blank: "名前を入力してください"
       taken: "は既に使用されています"
       not_found: "見つかりませんでした"

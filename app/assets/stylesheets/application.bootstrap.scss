@@ -16,6 +16,19 @@
   --custom-blue: #003775;
 }
 
+/* アラートのアニメーション */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animated-alert {
+  background-color: #c1c2c5;
+  padding: 10px;
+  margin-bottom: 15px;
+  animation: slideDown 0.5s ease-out;
+}
+
 /* ライブルーム一覧 */
 .list-group-flush {
   border-radius: 8px; // 角を8pxの半径で丸くする

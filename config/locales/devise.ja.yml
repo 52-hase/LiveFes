@@ -36,3 +36,8 @@ ja:
     omniauth_callbacks:
       new:
         sign_in_with_provider: "%{provider}でサインイン"
+    failure:
+      user:
+        not_found_in_database: "メールアドレスまたはパスワードが違います。"
+        blank_email: "メールアドレスを入力してください。"
+      invalid: "メールアドレスまたはパスワードが違います。"
