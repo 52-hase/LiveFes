@@ -2,22 +2,22 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card bg-transparent border-0 text-white"> <!-- 透過+text-white を追加 -->
+        <div class="card bg-transparent border-0 text-white mt-5"> <!-- 透過+text-white を追加 -->
           <div class="card-title text-center bg-transparent border-0">
-            <h2 class="mb-0"><%= t('devise.sessions.new.log_in') %></h2>
+            <h2 class="mb-4"><%= t('devise.sessions.new.log_in') %></h2>
           </div>
           <div class="card-body">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-group' }) do |f| %>
-              <div class="form-group">
+              <div class="form-group mb-4">
                 <%= f.label :email, t('devise.sessions.new.email'), class: 'font-weight-bold' %>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control bg-transparent text-white' %>
               </div>
-              <div class="form-group">
+              <div class="form-group mb-4">
                 <%= f.label :password, t('devise.sessions.new.password'), class: 'font-weight-bold' %>
                 <%= f.password_field :password, autocomplete: "current-password", class: 'form-control bg-transparent text-white' %>
               </div>
               <% if devise_mapping.rememberable? %>
-                <div class="form-group form-check">
+                <div class="form-group form-check mb-4">
                   <%= f.check_box :remember_me, class: 'form-check-input' %>
                   <%= f.label :remember_me, t('devise.sessions.new.remember_me'), class: 'form-check-label' %> <!-- ログイン状態 -->
                 </div>
