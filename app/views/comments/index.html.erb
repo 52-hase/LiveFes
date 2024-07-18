@@ -1,13 +1,18 @@
 <div class="container">
   <% if user_signed_in? %>
-    <!-- ユーザーがログインしている時の処理 -->
-    <div class="d-grid gap-3 justify-content-center" , style="margin-top: 100px;">
-      <%= link_to "ライブルーム一覧", "/live_rooms", class: 'btn btn-outline-primary btn-lg' , style: 'width: 500px;' %>
-      <%= link_to "ライブルーム作成", new_live_room_path, class: 'btn btn-outline-primary btn-lg', style: 'width: 500px;' %>
-      <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-primary btn-lg', style: 'width: 500px;' %>
+    <div class="d-grid gap-3 justify-content-center" style="margin-top: 100px;">
+      <%= link_to "/live_rooms", class: 'btn btn-slash' do %>
+        <span>ライブルーム一覧</span>
+      <% end %>
+      <%= link_to new_live_room_path, class: 'btn btn-slash' do %>
+        <span>ライブルーム作成</span>
+      <% end %>
+      <%= link_to user_path(current_user), class: 'btn btn-slash' do %>
+        <span>マイページ</span>
+      <% end %>
     </div>
     <% else %>
-      <!-- ユーザーがログインしていない時の処理 -->
+    <!-- ユーザーがログインしていない時の処理 -->
     <div class="d-flex align-items-center justify-content-center vh-100">
       <div class="row w-50" style="margin-top: -50vh;">
         <div class="col-md-12 text-center">
@@ -16,13 +21,18 @@
             <%= image_tag 'logo_LiveFes.png', alt: 'LiveFes Logo', class: 'img-fluid', style: 'max-width: 200px;' %>
           </div>
           <div class="d-flex gap-5 justify-content-center">
-            <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-warning' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-light' %>
+            <%= link_to new_user_session_path, class: 'btn btn-border' do %>
+              <span>ログイン</span>
+            <% end %>
+            <%= link_to new_user_registration_path, class: 'btn btn-border' do %>
+              <span>新規登録</span>
+            <% end %>
           </div>
-          </br>
-          <div>
-            <%= link_to "ライブルームを見に行く", "/live_rooms", class: 'btn btn-outline-primary', style: 'width: 230px;' %>
-          </div>
+          <br>
+        <div>
+          <%= link_to "/live_rooms", class: 'btn btn-border' do %>
+            <span>ライブルームを見に行く</span>
+          <% end %>
         </div>
       </div>
     </div>
