@@ -10,7 +10,7 @@
             <% if @user.avatar.attached? %>
               <%= image_tag url_for(@user.avatar), class: "rounded-circle img-thumbnail", style: "width: 150px; height: 150px; object-fit: cover;" %>
             <% else %>
-              <div class="bg-secondary text-white rounded-circle d-inline-flex justify-content-center align-items-center" style: "width: 150px; height: 150px; font-size: 50px;">
+              <div class="bg-secondary text-white rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 150px; height: 150px; font-size: 50px;">
                 <%= @user.name[0].upcase %>
               </div>
             <% end %>
@@ -34,10 +34,15 @@
 
             <div class="mb-4">
               <%= f.label :アイコン, class: "form-label text-white" %>
-              <%= f.file_field :avatar, class: "form-control text-white", accept: "image/*", style: "background-color: rgba(255, 255, 255, 0.1);" %>
+              <%= f.file_field :avatar, class: "form-control text-white", accept: "image/*", style: "background-color: rgba(255, 255, 255, 0.1);", id: "avatar-input" %>
+              <% if @user.avatar.attached? %>
+                <div class="mt-2">
+                  <%= check_box_tag :remove_avatar, "on", false, id: "remove-avatar" %>
+                  <%= label_tag :remove_avatar, "デフォルトアイコンに戻す", class: "text-white" %>
+                </div>
+              <% end %>
             </div>
-
-            </br>
+</br>
             <div class="d-grid">
               <%= f.submit "プロフィールを更新", class: "btn btn-outline-light" %>
             </div>
