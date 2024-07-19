@@ -7,17 +7,18 @@
   </div>
 </div>
 
-<div class="fixed-bottom bg-light py-3">
-  <div class="container">
-    <div class="form-group mr-2 d-flex">
-      <input type="text" class="form-control" id="chat-input" placeholder="コメント" style="border-radius: 20px 0 0 20px;" />
-      <label for="chat-image" id="chat-image-label" class="btn btn-secondary mr-2">画像</label>
-      <input type="file" id="chat-image" class="form-control-file d-none" />
-      <button id="button" class="btn btn-primary" style="border-radius: 0 20px 20px 0;">送信</button>
+<% if user_signed_in? %>
+  <div class="fixed-bottom bg-light py-3">
+    <div class="container">
+      <div class="form-group mr-2 d-flex">
+        <input type="text" class="form-control" id="chat-input" placeholder="コメント" style="border-radius: 20px 0 0 20px;" />
+        <label for="chat-image" id="chat-image-label" class="btn btn-secondary mr-2">画像</label>
+        <input type="file" id="chat-image" class="form-control-file d-none" />
+        <button id="button" class="btn btn-primary" style="border-radius: 0 20px 20px 0;">送信</button>
+      </div>
     </div>
   </div>
-</div>
-
+<% end %>
 
 <% content_for :meta_tags do %>
   <meta name="live_room_id" content="<%= @live_room.id %>">
