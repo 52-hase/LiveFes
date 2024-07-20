@@ -7,6 +7,13 @@
           <h2><%= t('devise.registrations.new.sign_up') %></h2>
         </div>
         <div class="card-body">
+        <% if flash[:alert] %>
+        <div class="custom-alert">
+          <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 

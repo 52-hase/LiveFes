@@ -18,8 +18,7 @@
   <%= link_to t('devise.unlocks.new.didn\'t_receive_unlock_instructions'), new_unlock_path(resource_name) %><br />
 <% end %>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to t('devise.omniauth_callbacks.new.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)), omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
-  <% end %>
-<% end %>
+<%= button_to t('devise.omniauth_callbacks.new.sign_in_with_provider', provider: 'Google'), 
+              omniauth_authorize_path(resource_name, :google_oauth2), 
+              data: { turbo: false },
+              class: 'google-signin-btn' %>
