@@ -5,4 +5,10 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s; /* アニメーション効果を追加 */
+}
+
+.google-signin-btn:hover {
+  background-color: #5a9efb; /* ホバー時の背景色を少し明るくする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ホバー時にボックスシャドウを追加 */
 }
