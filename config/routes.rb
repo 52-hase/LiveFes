@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'lives/show'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'comments#index'
   get 'comments/index'
   get '/terms', to: 'pages#terms'
