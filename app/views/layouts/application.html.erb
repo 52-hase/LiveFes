@@ -9,6 +9,8 @@
   <%= stylesheet_link_tag "application", media: "all", as: "style", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
+  <%= display_meta_tags(default_meta_tags) %>
+
   <!-- 追加したCSS -->
   <style>
     .sticky-top {
@@ -60,13 +62,21 @@
 
     /* 画面全体に背景画像を設定 */
     body {
-      background-image: url('<%= asset_path("concert_background.jpg") %>');
-      background-size: cover; /* 画像をカバーさせる */
-      background-position: center; /* 中心に配置 */
-      background-repeat: no-repeat; /* 繰り返しを防ぐ */
-      height: 100vh; /* 画面全体の高さを確保 */
-      margin: 0; /* 余白をなくす */
+    background-image: url('<%= asset_path("concert_background.jpg") %>');
+    background-size: 100% 100%; /* 画像を要素全体にフィットさせる */
+    background-position: center; /* 中心に配置 */
+    background-repeat: no-repeat; /* 繰り返しを防ぐ */
+    height: 100vh; /* 画面全体の高さを確保 */
+    margin: 0; /* 余白をなくす */
     }
+
+    /* スマホなどの小さい画面向けのスタイル */
+    @media (max-width: 768px) {
+    body {
+      background-size: contain; /* アスペクト比を保持 */
+      height: auto; /* 高さを自動にしてコンテンツに合わせる */
+    }
+
   </style>
 </head>
 <body>

@@ -189,6 +189,8 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    meta-tags (2.22.0)
+      actionpack (>= 6.0.0, < 8.1)
     mini_magick (4.13.1)
     mini_mime (1.1.5)
     minitest (5.23.1)
@@ -371,6 +373,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   letter_opener_web (~> 3.0)
+  meta-tags
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   pg (~> 1.2)
