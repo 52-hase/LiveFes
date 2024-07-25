@@ -1,110 +1,110 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Myapp</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag "application", media: "all", as: "style", "data-turbo-track": "reload" %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-
-  <%= display_meta_tags(default_meta_tags) %>
-
-  <!-- 追加したCSS -->
-  <style>
-    .sticky-top {
-      background-color: 
-      color: white; /* テキストの色 */
-      padding: 10px; /* 上下左右の余白 */
-      position: -webkit-sticky; /* Safari用 */
-      position: sticky; /* 固定するためのプロパティ */
-      z-index: 1000; /* 他の要素より前面に表示 */
-    }
-
-    nav ul {
-      list-style: none; /* リストのマーカーを非表示 */
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      display: inline-block; /* リスト項目を横並びにする */
-      margin-right: 10px; /* 項目の間隔 */
-    }
-
-    nav ul li a {
-      color: white; /* リンクのテキスト色 */
-      text-decoration: none; /* リンクの下線を非表示 */
-    }
-
-    /* フッターを画面の下部に固定する */
-    .general-footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* フッターの背景色 */
-      padding: 10px 0; /* 上下の余白 */
-      text-align: center; /* リンクを中央揃え */
-      z-index: 1000; /* 他の要素より前面に表示 */
-    }
-
-    .general-footer p {
-      margin: 0; /* デフォルトの余白をなくす */
-    }
-
-    .general-footer a {
-      color: white; /* リンクのテキスト色 */
-      text-decoration: none; /* リンクの下線を非表示 */
-      margin: 0 100px; /* リンク間の余白 */
-    }
-
-
-    /* 画面全体に背景画像を設定 */
-    body {
-    background-image: url('<%= asset_path("concert_background.jpg") %>');
-    background-size: 100% 100%; /* 画像を要素全体にフィットさせる */
-    background-position: center; /* 中心に配置 */
-    background-repeat: no-repeat; /* 繰り返しを防ぐ */
-    height: 100vh; /* 画面全体の高さを確保 */
-    margin: 0; /* 余白をなくす */
-    }
-
-    /* スマホなどの小さい画面向けのスタイル */
-    @media (max-width: 768px) {
-    body {
-      background-size: contain; /* アスペクト比を保持 */
-      height: auto; /* 高さを自動にしてコンテンツに合わせる */
-    }
-
-  </style>
-</head>
-<body>
-  <!-- 共通のヘッダー -->
-  <header class="sticky-top">
-    <!-- ここにヘッダーのコンテンツを追加 -->
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <!-- 他のページへのリンクを追加 -->
-      </ul>
-    </nav>
-  </header>
-
-  <% if current_user %>
-    <div id="user-id" data-user-id="<%= current_user.id %>"></div>
-    <% else %>
-    <div id="usr-id" data-user-id=""></div>
-  <% end %>
-  <%= yield %>
-  <footer>
-    <footer class="general-footer">
-      <p>
-        <%= link_to "利用規約", terms_path %> |
-        <%= link_to "プライバシーポリシー", privacy_path %>
-      </p>
-    </div>
-  </footer>
-</body>
+  <head>
+    <title>Myapp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  
+    <%= stylesheet_link_tag "application", media: "all", as: "style", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  
+    <%= display_meta_tags(default_meta_tags) %>
+  
+    <!-- 追加したCSS -->
+    <style>
+      .sticky-top {
+        background-color: 
+        color: white; /* テキストの色 */
+        padding: 10px; /* 上下左右の余白 */
+        position: -webkit-sticky; /* Safari用 */
+        position: sticky; /* 固定するためのプロパティ */
+        z-index: 1000; /* 他の要素より前面に表示 */
+      }
+    
+      nav ul {
+        list-style: none; /* リストのマーカーを非表示 */
+        padding: 0;
+        margin: 0;
+      }
+    
+      nav ul li {
+        display: inline-block; /* リスト項目を横並びにする */
+        margin-right: 10px; /* 項目の間隔 */
+      }
+    
+      nav ul li a {
+        color: white; /* リンクのテキスト色 */
+        text-decoration: none; /* リンクの下線を非表示 */
+      }
+    
+      /* フッターを画面の下部に固定する */
+      .general-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* フッターの背景色 */
+        padding: 10px 0; /* 上下の余白 */
+        text-align: center; /* リンクを中央揃え */
+        z-index: 1000; /* 他の要素より前面に表示 */
+      }
+    
+      .general-footer p {
+        margin: 0; /* デフォルトの余白をなくす */
+      }
+    
+      .general-footer a {
+        color: white; /* リンクのテキスト色 */
+        text-decoration: none; /* リンクの下線を非表示 */
+        margin: 0 100px; /* リンク間の余白 */
+      }
+    
+    
+      /* 画面全体に背景画像を設定 */
+      body {
+      background-image: url('<%= asset_path("concert_background.jpg") %>');
+      background-size: 100% 100%; /* 画像を要素全体にフィットさせる */
+      background-position: center; /* 中心に配置 */
+      background-repeat: no-repeat; /* 繰り返しを防ぐ */
+      height: 100vh; /* 画面全体の高さを確保 */
+      margin: 0; /* 余白をなくす */
+      }
+    
+      /* スマホなどの小さい画面向けのスタイル */
+      @media (max-width: 768px) {
+      body {
+        background-size: contain; /* アスペクト比を保持 */
+        height: auto; /* 高さを自動にしてコンテンツに合わせる */
+      }
+    
+    </style>
+  </head>
+  <body>
+    <!-- 共通のヘッダー -->
+    <header class="sticky-top">
+      <!-- ここにヘッダーのコンテンツを追加 -->
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <!-- 他のページへのリンクを追加 -->
+        </ul>
+      </nav>
+    </header>
+    
+    <% if current_user %>
+      <div id="user-id" data-user-id="<%= current_user.id %>"></div>
+      <% else %>
+      <div id="usr-id" data-user-id=""></div>
+    <% end %>
+    <%= yield %>
+    <footer>
+      <footer class="general-footer">
+        <p>
+          <%= link_to "利用規約", terms_path %> |
+          <%= link_to "プライバシーポリシー", privacy_path %>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
