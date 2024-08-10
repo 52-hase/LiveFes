@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-white text-center">
+      <h4><%= @live_event.name %></h4>
+      <% if @live_event.artists.any? %>
+        <% @live_event.artists.each do |artist| %>
+        <div class="d-flex justify-content-center">
+          <%= link_to artist_musics_path(artist, live_event_id: @live_event.id), class: 'btn btn-slash' do %>
+            <span><%= artist.name %></span>
+          <% end %>
+        </div>
+      <% end %>
+      <% else %>
+        <p>アーティストは登録されていません。</p>
+      <% end %>
+    </div>
+  </div>
+</div>

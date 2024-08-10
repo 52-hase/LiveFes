@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  set_list: one
+  music: one
+
+two:
+  set_list: two
+  music: two
