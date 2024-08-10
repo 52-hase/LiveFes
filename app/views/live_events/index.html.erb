@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-white text-center">
+    <h3>開催ライブ一覧</h3>
+      <% @live_events.each do |live_event| %>
+        <div>
+          <%= link_to live_event_path(live_event), class: 'btn btn-slash' do %>
+            <span><%= live_event.name %></span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
