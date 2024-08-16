@@ -1,7 +1,7 @@
-<li class="list-group-item">
-  <div class="card">
+<li class="list-group-item bg-transparent border-0">
+  <div class="card bg-transparent border-0">
     <div class="card-body">
-      <div class="d-flex align-items-center mb-3">
+      <div class="d-flex align-items-start" style="margin-left: 300px;">
         <% if message.user.avatar.attached? %>
           <img class="rounded-circle img-thumbnail mr-3" src="<%= url_for(message.user.avatar) %>" style="width: 50px; height: 50px; object-fit: cover;">
         <% else %>
@@ -9,18 +9,22 @@
             <%= message.user.name[0].upcase %>
           </div>
         <% end %>
+        
+        <!-- 吹き出し -->
         <div>
-          <strong><%= message.user.name %></strong>
-          <div class="text-muted"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></div>
-        </div>
-      </div>
-      <div class="message">
-        <p class="card-text"><%= message.content %></p>
-        <% if message.image.attached? %>
-          <div class="mt-2">
-            <img class="img-fluid" src="<%= url_for(message.image) %>" style="width: 300px; height: auto;">
+          <div class="text-white">
+            <%= message.user.name %>
+            <span style="color: rgba(108, 117, 125, 10); margin-left: 0.5rem;"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></span> <!-- 透過グレーにする -->
           </div>
-        <% end %>
+          <div class="message-bubble mt-2">
+            <div class="card-text" style="color: black;"><%= message.content %></div>
+            <% if message.image.attached? %>
+              <div class="mt-2">
+                <img class="img-fluid" src="<%= url_for(message.image) %>" style="width: 300px; height: auto;">
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

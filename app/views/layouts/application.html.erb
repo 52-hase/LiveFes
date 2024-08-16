@@ -85,8 +85,9 @@
       <!-- ここにヘッダーのコンテンツを追加 -->
       <nav>
         <ul>
-          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "ホーム", root_path %></li>
+          <li><a href="javascript:history.back()">＜戻る</a></li>
           <!-- 他のページへのリンクを追加 -->
         </ul>
       </nav>
