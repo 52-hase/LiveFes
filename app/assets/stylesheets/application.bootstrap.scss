@@ -32,6 +32,16 @@
   animation: slideDown 0.5s ease-out;
 }
 
+/* コメントを吹き出しにする */
+.message-bubble {
+  background-color: #f1f1f1; /* 吹き出しの背景色 */
+  border-radius: 10px; /* 吹き出しの角を丸くする */
+  padding: 10px; /* 吹き出しの内側の余白 */
+  margin-left: 10px; /* アイコンとの隙間 */
+  position: relative; /* 吹き出しの位置を相対的にする */
+}
+
+
 /* ライブルーム一覧 */
 .list-group-flush {
   border-radius: 8px; // 角を8pxの半径で丸くする

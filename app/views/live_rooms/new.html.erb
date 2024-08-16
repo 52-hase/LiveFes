@@ -1,9 +1,13 @@
-<div class="d-flex justify-content-center align-items-center" >
+<div class="d-flex justify-content-center align-items-center mt-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card bg-transparent border-0 text-white"> <!-- text-white を追加 -->
+        <div class="card bg-transparent border-0 text-white">
           <div class="card-title text-center bg-transparent border-0">
+            <!-- 入力例を追加 -->
+            <div class="bg-white text-dark p-2 mb-3 rounded">
+              例: ROCK IN JAPAN（2024/08/11）
+            </div>
           </div>
           <div class="card-body">
             <%= form_with model: LiveRoom.new, local: true, class: "mb-4" do |form| %>
