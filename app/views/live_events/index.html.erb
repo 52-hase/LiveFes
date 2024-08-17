@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10 text-white text-center">
-    <h3>開催ライブ一覧</h3>
+    </br>
+    <h4>開催ライブ一覧</h4>
+    </br>
       <% @live_events.each do |live_event| %>
         <div>
           <%= link_to live_event_path(live_event), class: 'btn btn-slash' do %>
