@@ -7,7 +7,11 @@
             <h2 class="mb-4"><%= t('devise.sessions.new.log_in') %></h2>
           </div>
           <div class="card-body">
-            <% if flash[:alert] %>
+            <% if flash[:notice] && !flash[:notice].include?('Translation missing') %>
+              <div class="animated-alert text-center">
+                <%= flash[:notice] %>
+              </div>
+            <% elsif flash[:alert] && !flash[:alert].include?('Translation missing') %>
               <div class="animated-alert text-center">
                 <%= flash[:alert] %>
               </div>
