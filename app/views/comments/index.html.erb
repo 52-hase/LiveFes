@@ -33,9 +33,22 @@
           </div>
           <br>
           <div>
-            <%= link_to "/live_rooms", class: 'btn btn-border' do %>
+            <%= link_to "/live_rooms", class: 'btn btn-border', style: 'display: block; max-width: 300px; width: 100%; margin: 0 auto;' do %>
               <span>ライブルームを見に行く</span>
             <% end %>
+          </div>
+          </br>
+          <div class="accordion-header d-flex justify-content-center" id="headingOne">
+            <button class="btn btn-border accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="max-width: 300px; display: flex; justify-content: center; align-items: center;">
+              アプリについて
+            </button>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#appDescriptionAccordion">
+              <div class="accordion-body text-center">
+                <h5 style="color: rgba(255, 255, 255, 0.5);  padding: 10px; text-align: left; font-weight: 300;">
+                  Live Fes では、ライブ後の余韻を参加者同士が共有できる場を提供します。</br>チャット機能で感想や思い出を語り合い、ライブの興奮を振り返りましょう。
+                </h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
