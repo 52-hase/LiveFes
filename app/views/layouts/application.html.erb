@@ -81,17 +81,24 @@
   </head>
   <body>
     <!-- 共通のヘッダー -->
-    <header class="sticky-top">
-      <!-- ここにヘッダーのコンテンツを追加 -->
-      <nav>
-        <ul>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "ホーム", root_path %></li>
-          <li><a href="javascript:history.back()">＜戻る</a></li>
-          <!-- 他のページへのリンクを追加 -->
-        </ul>
-      </nav>
-    </header>
+  <header class="sticky-top" style="background-color: #333; padding: 10px 0;">
+    <nav class="d-flex justify-content-between">
+      <ul class="nav">
+        <li class="nav-item">
+          <%= link_to "ホーム", root_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:history.back()" class="nav-link text-white">＜戻る</a>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
     
     <% if current_user %>
       <div id="user-id" data-user-id="<%= current_user.id %>"></div>
@@ -99,17 +106,16 @@
       <div id="usr-id" data-user-id=""></div>
     <% end %>
     <%= yield %>
-  <footer class="general-footer" style="display: flex; justify-content: space-between; color: white;">
+  <footer class="general-footer" style="display: flex; justify-content: space-between; align-items: center; color: white; width: 100%; padding: 10px 20px; background-color: #333;">
     <div>
       <p style="margin: 0;">
         © 2024 Live Fes - All rights reserved.
       </p>
     </div>
     <div>
-      <p style="margin: 0;">
         <%= link_to "利用規約", terms_path %>
         <%= link_to "プライバシーポリシー", privacy_path %>
-      </p>
+        <%= link_to "お問い合わせ", new_contact_path %>
     </div>
   </footer>
   </body>
