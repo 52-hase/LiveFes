@@ -16,6 +16,9 @@ ja:
         password: "パスワード"
         remember_me: "ログインの情報を保存する"
         sign_in: "ログイン"
+      signed_out: ""
+      user:
+        already_signed_out: ""
     passwords:
       new:
         forgot_your_password: "パスワードをお忘れの方"
