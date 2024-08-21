@@ -1,19 +1,22 @@
 <div class="container">
-  <% if user_signed_in? %>
+  <% if user_signed_in? %></br>
     <div class="d-grid gap-3 justify-content-center" style="margin-top: 100px;">
       <%= link_to "/live_rooms", class: 'btn btn-slash' do %>
         <span>ライブルーム一覧</span>
       <% end %>
+      </br>
       <%= link_to new_live_room_path, class: 'btn btn-slash' do %>
         <span>ライブルーム作成</span>
       <% end %>
+      </br>
       <%= link_to live_events_path, class: 'btn btn-slash' do %>
-        <span>セットリスト一覧</span>
+        <span>開催ライブ一覧</span>
       <% end %>
+      </br>
       <%= link_to user_path(current_user), class: 'btn btn-slash' do %>
         <span>マイページ</span>
-      <% end %>
-    </div>
+      <% end %></br>
+    </div></br>
     <% else %>
     <!-- ユーザーがログインしていない時の処理 -->
     <div class="d-flex align-items-center justify-content-center vh-100">
@@ -39,7 +42,7 @@
           </div>
           </br>
           <div class="accordion-header d-flex justify-content-center" id="headingOne">
-            <button class="btn btn-border accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="max-width: 300px; display: flex; justify-content: center; align-items: center;">
+          <button class="btn btn-border accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="max-width: 300px; display: flex; justify-content: center; align-items: center; color: rgba(255, 255, 255, 0.5);">
               アプリについて
             </button>
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#appDescriptionAccordion">
