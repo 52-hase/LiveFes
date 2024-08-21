@@ -32,9 +32,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  # お問い合わせ
-  resources :contacts, only: [:new, :create]
-
   # チャットルーム
   get 'chat', to: 'rooms#show' # チャットルームの表示
 
