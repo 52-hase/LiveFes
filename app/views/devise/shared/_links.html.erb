@@ -1,21 +1,21 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to t('devise.sessions.new.log_in_account'), new_session_path(resource_name) %><br />
+  <%= link_to t('devise.sessions.new.log_in_account'), new_session_path(resource_name), class: 'custom-link' %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t('devise.registrations.new.sign_up'), new_registration_path(resource_name) %><br />
+  <%= link_to t('devise.registrations.new.sign_up'), new_registration_path(resource_name), class: 'custom-link' %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to t('devise.passwords.new.forgot_your_password'), new_password_path(resource_name) %><br />
+  <%= link_to t('devise.passwords.new.forgot_your_password'), new_password_path(resource_name), class: 'custom-link' %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t('devise.confirmations.new.didn\'t_receive_confirmation_instructions'), new_confirmation_path(resource_name) %><br />
+  <%= link_to t('devise.confirmations.new.didn\'t_receive_confirmation_instructions'), new_confirmation_path(resource_name), class: 'custom-link' %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to t('devise.unlocks.new.didn\'t_receive_unlock_instructions'), new_unlock_path(resource_name) %><br />
+  <%= link_to t('devise.unlocks.new.didn\'t_receive_unlock_instructions'), new_unlock_path(resource_name), class: 'custom-link' %><br />
 <% end %>
 
 <%= button_to t('devise.omniauth_callbacks.new.sign_in_with_provider', provider: 'Google'), 
