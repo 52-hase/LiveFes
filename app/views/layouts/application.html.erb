@@ -39,25 +39,30 @@
       }
     
       /* フッターを画面の下部に固定する */
-      .general-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* フッターの背景色 */
-        padding: 10px 0; /* 上下の余白 */
-        text-align: center; /* リンクを中央揃え */
-        z-index: 1000; /* 他の要素より前面に表示 */
-      }
-    
-      .general-footer p {
-        margin: 0; /* デフォルトの余白をなくす */
-      }
-    
-      .general-footer a {
-        color: white; /* リンクのテキスト色 */
-        text-decoration: none; /* リンクの下線を非表示 */
-        margin: 0 100px; /* リンク間の余白 */
-      }
+.general-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* フッターの背景色 */
+  padding: 10px 0; /* 上下の余白 */
+  text-align: center; /* リンクを中央揃え */
+  z-index: 1000; /* 他の要素より前面に表示 */
+}
+
+.general-footer p {
+  margin: 0; /* デフォルトの余白をなくす */
+}
+
+.general-footer a {
+  color: white; /* リンクのテキスト色 */
+  text-decoration: none; /* リンクの下線を非表示 */
+  margin: 0 10px; /* リンク間の余白 */
+}
+
+.general-footer div {
+  display: inline-block; /* フッター内のコンテンツを中央揃え */
+}
+
     
     
       /* 画面全体に背景画像を設定 */
@@ -73,8 +78,9 @@
       /* スマホなどの小さい画面向けのスタイル */
       @media (max-width: 768px) {
       body {
-        background-size: contain; /* アスペクト比を保持 */
-        height: auto; /* 高さを自動にしてコンテンツに合わせる */
+      background-size: cover; /* アスペクト比を保持しつつ全体にフィット */
+      height: 100vh; /* 画面全体の高さを確保 */
+        }
       }
     
     </style>
@@ -106,16 +112,14 @@
       <div id="usr-id" data-user-id=""></div>
     <% end %>
     <%= yield %>
-  <footer class="general-footer" style="display: flex; justify-content: space-between; align-items: center; color: white; width: 100%; padding: 10px 20px; background-color: #333;">
+  <footer class="general-footer" style="color: white; width: 100%; padding: 10px 20px; background-color: #333;">
     <div>
-      <p style="margin: 0;">
-        © 2024 Live Fes - All rights reserved.
-      </p>
-    </div>
-    <div>
-        <%= link_to "利用規約", terms_path %>
+    <%= link_to "利用規約", terms_path %>
         <%= link_to "プライバシーポリシー", privacy_path %>
-        <%= link_to "お問い合わせ", new_contact_path %>
+        <a href="https://forms.gle/4AQ6kPbZMGsZvXQn6" target="_blank">お問い合わせ</a>
+      <p style="margin: 0;">
+      Copyrigh © 2024 Live Fes - All rights reserved.
+      </p>
     </div>
   </footer>
   </body>
