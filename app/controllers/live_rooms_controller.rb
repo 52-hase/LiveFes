@@ -11,6 +11,7 @@ class LiveRoomsController < ApplicationController
   def create
     @live_room = LiveRoom.new(live_room_params)
     if @live_room.save
+      flash[:notice] = "ルームが作成されました。"
       redirect_to @live_room
     else
       render :new

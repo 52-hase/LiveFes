@@ -2,10 +2,19 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card bg-transparent border-0">
-        <div class="card-header text-center text-white">
-          <h2 class="mb-0">ユーザープロフィール</h2>
+        <div class="card-header text-center text-white" style="border-bottom: none;">
+          <h1>ユーザープロフィール</h1></br>
         </div>
+
         <div class="card-body">
+          <div id="flash-messages" style="position: fixed; top: 3px; left: 50%; transform: translateX(-50%); z-index: 1050; width: 100%; max-width: 600px;">
+            <% if flash[:notice] %>
+              <div class="alert alert-success text-center" style="background-color: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px;">
+                <%= flash[:notice] %>
+              </div>
+            <% end %>
+          </div>
+          
           <div class="text-center mb-4">
             <% if @user.avatar.attached? %>
               <%= image_tag url_for(@user.avatar), class: "rounded-circle img-thumbnail", style: "width: 150px; height: 150px; object-fit: cover;" %>
@@ -42,7 +51,7 @@
                 </div>
               <% end %>
             </div>
-</br>
+            </br>
             <div class="d-grid">
               <%= f.submit "プロフィールを更新", class: "btn btn-outline-light" %>
             </div>

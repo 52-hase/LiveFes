@@ -2,16 +2,15 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card bg-transparent border-0 text-white">
-          <div class="card-title text-center bg-transparent border-0">
-            <!-- 入力例を追加 -->
-            <div class="bg-white text-dark p-2 mb-3 rounded"></br>
+        <div class="card bg-transparent border-0 text-white"></br>
+          <div class="card-title text-center" style="border: 2px solid #ccffcc; background-color: rgba(44, 62, 80, 0.5); color: #ecf0f1; padding: 15px; border-radius: 5px;">
+            <div class="p-2 mb-3 rounded" style="background-color: rgba(44, 62, 80, 0.5); color: #ecf0f1;"></br>
             </br>
               <h5>例: ROCK IN JAPAN（2024/08/11）</h5></br>
               (作成ボタンを押すと作成されたチャットルームに移動します。)
             </div>
           </div>
-          <div class="card-body">
+          <div class="card-body"></br>
             <%= form_with model: LiveRoom.new, local: true, class: "mb-4" do |form| %>
               <div class="mb-3">
                 <%= form.text_field :name, class: "form-control", placeholder: "ルーム名を入力してください" %>

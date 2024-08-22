@@ -92,17 +92,60 @@
   <body>
     <header class="sticky-top" style="background-color: #333; padding: 10px 0;">
       <nav class="d-flex justify-content-between">
+
+      <!-- 各ページの戻るボタンをファイルを指定してヘッダーに表示 -->
         <ul class="nav">
           <li class="nav-item">
-            <%= link_to "ホーム", root_path, class: 'nav-link text-white' %>
+            <%= link_to "Live Fes", root_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
           </li>
-          <li class="nav-item">
-            <a href="javascript:history.back()" class="nav-link text-white">＜戻る</a>
-          </li>
+          <% if controller_name == 'live_rooms' && action_name == 'show' %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', live_rooms_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'live_rooms' && action_name == 'index' %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', comments_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'live_rooms' && action_name == 'new' %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', comments_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'users' && action_name == 'show' %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', comments_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'live_events' && action_name == 'index' %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', comments_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'live_events' && action_name == 'show' %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', live_events_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'musics' && action_name == 'index' %>
+            <% live_event = LiveEvent.find(params[:live_event_id]) if params[:live_event_id].present? %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', live_events_path(live_event), class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
+          <% end %>
+          <% if controller_name == 'musics' && action_name == 'show' %>
+            <% if params[:artist_id].present? %>
+              <li class="nav-item">
+                <%= link_to '＜戻る', musics_path(artist_id: params[:artist_id]), class: 'nav-link text-white', style: 'font-size: 18px;' %>
+              </li>
+            <% end %>
+          <% end %>
         </ul>
+
         <ul class="nav">
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-white', style: 'font-size: 18px;' %>
           </li>
         </ul>
       </nav>

@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   # ユーザー認証
   devise_for :users, controllers: {
   omniauth_callbacks: 'users/omniauth_callbacks',
-  passwords: 'users/passwords'
+  passwords: 'users/passwords',
+  registrations: 'users/registrations'
 }
 
   # ルートパス
@@ -31,6 +32,9 @@ Rails.application.routes.draw do
   resources :live_rooms do
     resources :messages, only: [:create]
   end
+
+  # 戻るボタンでホームに戻る
+  resources :comments
 
   # チャットルーム
   get 'chat', to: 'rooms#show' # チャットルームの表示
