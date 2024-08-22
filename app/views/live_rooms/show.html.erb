@@ -1,10 +1,21 @@
 <div class="container mt-5 d-flex flex-column align-items-center" style="background-color: #f8f9fa; padding: 100px; border-radius: 10px; margin-bottom: 80px; background-color: transparent;">
-  <h2 class="text-center mb-4" style="color: #ffffff;"><%= @live_room.name %></h2>
+  <h2 class="text-center mb-4" style="color: #ffffff; border: 2px solid #ffffff; padding: 10px; background-color: rgba(44, 62, 80, 0.7); border-radius: 10px;">
+    <%= @live_room.name %>
+  </h2>
   <div id="messages" style="margin-top: 20px; width: 100%;">
     <ul class="list-group">
       <%= render @messages %>
     </ul>
   </div>
+</div>
+
+
+<div id="flash-messages" style="position: fixed; top: 3px; left: 50%; transform: translateX(-50%); z-index: 1050; width: 100%; max-width: 600px;">
+  <% if flash[:notice] %>
+    <div class="alert alert-success text-center" style="background-color: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px;">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 </div>
 
 <% if user_signed_in? %>

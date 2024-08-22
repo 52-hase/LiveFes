@@ -16,6 +16,7 @@ ja:
         password: "パスワード"
         remember_me: "ログインの情報を保存する"
         sign_in: "ログイン"
+      signed_in: "ログインしました。"
       signed_out: ""
       user:
         already_signed_out: ""
@@ -41,6 +42,8 @@ ja:
     omniauth_callbacks:
       new:
         sign_in_with_provider: "%{provider}でサインイン"
+      user:
+        success: ""
     failure:
       user:
         not_found_in_database: "メールアドレスまたはパスワードが違います。"

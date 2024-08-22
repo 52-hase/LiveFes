@@ -9,4 +9,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
     resource.update_without_password(params.except('current_password'))
   end
+
+  def after_sign_up_path_for(resource)
+    flash[:notice] = "アカウントが作成されました。"
+    root_path
+  end
 end
