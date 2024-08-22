@@ -31,6 +31,7 @@ ja:
         password_confirmation: "新しいパスワード（確認用）"
         change_password_button: "パスワードを変更する"
         minimum_password_length: "%{count}文字以上"
+      updated: "パスワードが変更されました。"
       user:
         send_instructions: "パスワードリセットのメールを送信しました。"
     confirmations:
