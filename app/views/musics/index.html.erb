@@ -13,7 +13,7 @@
             <div class="list-group-item d-flex justify-content-between align-items-center mb-3 shadow-sm rounded" style="background-color: rgba(248, 249, 250, 0.4);">
               <div class="d-flex align-items-center flex-grow-1">
                 <!-- 曲の番号と名前全体をリンクにします -->
-                <%= link_to artist_music_path(@artist, music[:id]), class: 'text-decoration-none text-dark d-flex align-items-center w-100' do %>
+                <%= link_to artist_music_path(@artist, music[:id], live_event_id: params[:live_event_id]), class: 'text-decoration-none text-dark d-flex align-items-center w-100' do %>
                   <h5 class="mb-0 me-3 flex-grow-1">
                     <%= "#{index + 1}. #{music[:name]}" %>
                   </h5>
