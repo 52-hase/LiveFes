@@ -154,14 +154,14 @@
           <% if controller_name == 'musics' && action_name == 'index' %>
             <% live_event = LiveEvent.find(params[:live_event_id]) if params[:live_event_id].present? %>
             <li class="nav-item">
-              <%= link_to '＜戻る', live_events_path(live_event), class: 'nav-link text-white', style: 'font-size: 18px;' %>
+              <%= link_to '＜戻る', live_event_path(live_event), class: 'nav-link text-white', style: 'font-size: 18px;' %>
             </li>
           <% end %>
           <% if controller_name == 'musics' && action_name == 'show' %>
-            <% if params[:artist_id].present? %>
-              <li class="nav-item">
-                <%= link_to '＜戻る', musics_path(artist_id: params[:artist_id]), class: 'nav-link text-white', style: 'font-size: 18px;' %>
-              </li>
+          <% if params[:artist_id].present? %>
+            <li class="nav-item">
+              <%= link_to '＜戻る', musics_path(artist_id: params[:artist_id], live_event_id: params[:live_event_id]), class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            </li>
             <% end %>
           <% end %>
         </ul>
