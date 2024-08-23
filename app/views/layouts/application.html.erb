@@ -83,17 +83,40 @@
       }
 
       @media (max-width: 768px) {
-        body {
-          background-size: cover;
-        }
+      .accordion-header button {
+        max-width: 100%; /* アプリにつてのボタンの幅をデバイスの幅に合わせる */
+        font-size: 16px; /* フォントサイズを小さくする */
+        padding: 10px; /* パディングを小さくする */
       }
+    
+      .accordion-body h5 {
+        font-size: 12px; /* フォントサイズを小さくする */
+        padding: 5px; /* パディングを小さくする */
+        text-align: center; /* テキストを中央揃えにする */
+      }
+    
+      .accordion-body {
+        padding: 10px; /* アコーディオンボディ全体のパディングを調整 */
+      }
+      /* ロゴのサイズ調整 */
+      .mb-4 img {
+        max-width: 150px; /* 最大幅を150pxに */
+        width: 100%; /* 幅を100%に */
+        height: 110px; /* 高さを100pxに設定 */
+      }
+      .mb-4 {
+      margin-top: 100px; /* 上部に50pxのマージンを追加 */
+      }
+      
+    }
+
     </style>
   </head>
   <body>
     <header class="sticky-top" style="background-color: #333; padding: 10px 0;">
       <nav class="d-flex justify-content-between">
 
-      <!-- 各ページの戻るボタンをファイルを指定してヘッダーに表示 -->
+        <!-- 各ページの戻るボタンをファイルを指定してヘッダーに表示 -->
         <ul class="nav">
           <li class="nav-item">
             <%= link_to "Live Fes", root_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
@@ -160,15 +183,18 @@
       <%= yield %>
     </div>
 
-    <footer class="general-footer" style="color: white; width: 100%; padding: 10px 20px; background-color: #333;">
-      <div>
-        <%= link_to "利用規約", terms_path %>
-        <%= link_to "プライバシーポリシー", privacy_path %>
-        <a href="https://forms.gle/4AQ6kPbZMGsZvXQn6" target="_blank">お問い合わせ</a>
-        <p style="margin: 0;">
-          Copyright © 2024 Live Fes - All rights reserved.
-        </p>
-      </div>
-    </footer>
+    <!-- フッターの表示（チャットルーム以外全てに表示）-->
+    <% unless controller_name == 'live_rooms' && action_name == 'show' %>
+      <footer class="general-footer" style="color: white; width: 100%; padding: 10px 20px; background-color: #333;">
+        <div>
+          <%= link_to "利用規約", terms_path %>
+          <%= link_to "プライバシーポリシー", privacy_path %>
+          <a href="https://forms.gle/4AQ6kPbZMGsZvXQn6" target="_blank">お問い合わせ</a>
+          <p style="margin: 0;">
+            Copyright © 2024 Live Fes - All rights reserved.
+          </p>
+        </div>
+      </footer>
+    <% end %>
   </body>
 </html>
