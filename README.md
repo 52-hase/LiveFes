@@ -1,24 +1,38 @@
-# README
+# Live Fes
+[![Image from Gyazo](https://i.gyazo.com/e94c1bebfa0680067260947ddb44a6c1.png)](https://gyazo.com/e94c1bebfa0680067260947ddb44a6c1)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ◽️サービスURL
+https://live-c-app-3817b17263ba.herokuapp.com/
+## ◽️サービス概要
+Live Fes は音楽ライブ・フェスの参加者が感想や思い出を発信し合うことで、余韻に浸ったり、喪失感を緩和させたりする場を提供するサービスです。
 
-Things you may want to cover:
+## ◽️このサービスへの思い・作りたい理由
+私は音楽ライブ・フェスが趣味で、年に10回ほど参加します。イベントの後には必ず、「X」でトレンドに上がるほどの感想が参加者から発信されます。こうした参加者のイベントに対する余韻は1〜2週間ほど続くと聞きました。（私自身も余韻は一週間ほど残り、ライブで聴いた曲をもう一度聴きます） また、イベント終了後には、ライブの盛り上がりから解放され、現実に引き戻されることにより「悲しい」「寂しい」といった喪失感に襲われます。 このような「余韻」や「喪失感」を共有できる場があれば、参加した者同士で、より楽しく余韻に浸ったり、寂しい気持ちを共感し合い、喪失感を分かち合うことができると考えました。
 
-* Ruby version
+## ◽️ユーザー層について
+音楽ライブ・フェスに参加する　[男女、20代〜30代、SNSを利用している方、発信するのが好きな方]
 
-* System dependencies
+## ◽️サービスの利用イメージ
+音楽フェスやライブ終了後の控室のような感覚で利用できます。チャット欄の閲覧のみログイン不要で、チャットルームはユーザーが自由に作成可能です。また、曲の再生機能を使ってライブに参加したアーティストの曲を聴くことができます。「ここが良かった！」「あの曲が聴けて良かった！」といった感想を共有することで余韻に浸り、「ライブが終わって寂しい」「また次も参加しましょう！」といった気持ちを分かち合い、喪失感を和らげることが目的です。
 
-* Configuration
+## ◽️サービスの差別化ポイント・推しポイント
+- 「X」がサービスとしては類似しているが、Xは規模が大きすぎる。規模を小さくし目的を音楽ライブ、フェスの感想共有に絞ることで、差別化を図ります。
+- 「X」では２日ほどはトレンドに上がりますが、早ければその日のうちに他の話題にかき消されてしまいます。トレンドから外れた後は、目的のポストを探すのに「文言」や「＃」で検索する必要があるが、このサービスではライブごとの部屋を作ることで同じ目的意識の人達が集まることができます。
+- ライブに参加したアーティストのセットリスト表示します。（表示された曲はSpotify APIで曲を再生できるようにする）
 
-* Database creation
+## ◽️技術スタック
+| カテゴリー     | 技術スタック             |
+| ------------| --------------------- |
+| 開発環境      | Docker                |
+| フロントエンド   |   JavaScript, Bootstrap          |
+| バックエンド    | Ruby ver3.2.2, Ruby on Rails ver7.1.3, Node.js, WebSocket (ActionCable)  |
+| データベース   | PostgreSQL                             |
+| インフラ       |  Heroku, AWS S3                        |
+| Web API     |   Spotify Web API（gem 'rspotify'）      |
+| Gem         |  devise, letter_opener_web ~> 3.0, dotenv-rails,　image_processing ~> 1.2, aws-sdk-s3, omniauth-google-oauth2, omniauth-rails_csrf_protection, meta-tags, rspotify   |
 
-* Database initialization
+## ◽️画面遷移図
+画面遷移図は[こちら](https://www.figma.com/board/OKJCxoKYBoldymLsJ65ihR/Untitled?node-id=0%3A1&t=LVJsXm6GHN7W2qk2-1)です（企画段階）
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## ◽️ER 図
+[![Image from Gyazo](https://i.gyazo.com/6b285f81daf9b8100bdb8198284de113.png)](https://gyazo.com/6b285f81daf9b8100bdb8198284de113)
