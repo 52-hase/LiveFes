@@ -64,6 +64,18 @@
         color: #cccccc; /* ホバー時に色を変更（薄い灰色など） */
       }
 
+      .logout-link:hover {
+      text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.8), 
+      0 0 10px rgba(255, 255, 255, 0.8), 
+      0 0 15px rgba(255, 0, 0, 0.8);
+      }
+      .glowing-text:hover {
+        text-shadow: 
+          0 0 10px rgba(255, 255, 255, 1), 
+          0 0 20px rgba(255, 255, 255, 1), 
+          0 0 30px rgba(255, 0, 0, 1);
+      }
 
 
       /* 高さ調整 */
@@ -119,7 +131,7 @@
         <!-- 各ページの戻るボタンをファイルを指定してヘッダーに表示 -->
         <ul class="nav">
           <li class="nav-item">
-            <%= link_to "Live Fes", root_path, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            <%= link_to "Live Fes", root_path, class: 'nav-link text-white glowing-text', style: 'font-size: 18px;' %>
           </li>
           <% if controller_name == 'live_rooms' && action_name == 'show' %>
             <li class="nav-item">
@@ -168,7 +180,7 @@
 
         <ul class="nav">
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-white', style: 'font-size: 18px;' %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-white logout-link', style: 'font-size: 18px;' %>
           </li>
         </ul>
       </nav>
