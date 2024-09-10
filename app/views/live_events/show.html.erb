@@ -2,7 +2,9 @@
   <div class="row justify-content-center" style="max-height: 90vh; overflow-y: auto;">
     <div class="col-md-10 text-white text-center mt-5">
       </br>
-      <h4><%= @live_event.name %></h4>
+      <h4 style="border: 2px solid #498bc9; background-color: rgba(44, 62, 80, 0.5); color: #ecf0f1; padding: 10px; border-radius: 5px; display: inline-block; margin: 0 auto; white-space: nowrap; min-width: 130px;">
+        <%= @live_event.name %>
+      </h4>
       </br>
       </br>
       <% if @live_event.artists.any? %>
