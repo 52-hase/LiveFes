@@ -61,6 +61,32 @@
             </div>
           </div>
         </div>
+        <div class="mt-3 text-center">
+          <button type="button" class="btn btn-border w-100" data-bs-toggle="modal" data-bs-target="#appUsageModal" style="max-width: 300px;">
+            アプリの使い方
+          </button>
+        </div>
+        <!-- モーダル -->
+        <div class="modal fade" id="appUsageModal" tabindex="-1" aria-labelledby="appUsageModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: rgba(255, 255, 255, 0.6);">
+              <div class="modal-header">
+                <h5 class="modal-title text-center w-100" id="appUsageModalLabel">アプリの使い方</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h6 class="mt-5">・ライブルームの作成</h6>
+                <%= image_tag 'https://i.gyazo.com/2d1b2f65afe9f2b284554f6aabbe14cc.gif', alt: 'ライブルーム作成', class: 'img-fluid mb-3' %>
+              </br></br></br></br>
+                <h6>・ライブルームで思い出を共有</h6>
+                <%= image_tag 'https://i.gyazo.com/fde235ad2f5fb351cf3c2017d9b37e70.jpg', alt: 'ライブルーム作成', class: 'img-fluid mb-3' %>
+              </br></br></br></br>
+                <h6>・曲を聴いてライブを振り返る</h6>
+                <%= image_tag 'https://i.gyazo.com/d0464225116a9ddc0ac10edd5479c49d.gif', alt: 'ライブルーム作成', class: 'img-fluid mb-3' %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
