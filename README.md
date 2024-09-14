@@ -2,7 +2,7 @@
 [![Image from Gyazo](https://i.gyazo.com/e94c1bebfa0680067260947ddb44a6c1.png)](https://gyazo.com/e94c1bebfa0680067260947ddb44a6c1)
 
 ## ◽️サービスURL
-https://www.live-fes.com/
+https://live-fes.com
 ## ◽️サービス概要
 Live Fes は音楽ライブ・フェスの参加者が感想や思い出を発信し合うことで、余韻に浸ったり、喪失感を緩和させたりする場を提供するサービスです。
 
