@@ -4,16 +4,6 @@
 @import "google_signin_button";
 @import 'custom_alerts';
 
-/*不要？　ライブアプリの囲いの縦幅調整*/
-.custom-card-height {
-  height: 500px;
-}
-
- /* 不要？　必要に応じて調整 ボタンの位置 */
-.margin-top-large {
-  margin-top: 250px;
-}
-
 /* ログインメッセージ5秒 */
 .alert {
   transition: opacity 0.5s ease-out;
