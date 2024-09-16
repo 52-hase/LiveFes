@@ -11,13 +11,13 @@
         <% end %>
         
         <!-- 吹き出し -->
-        <div>
+        <div style="max-width: 50%;">
           <div class="text-white">
             <%= message.user.name %>
             <span style="color: rgba(108, 117, 125, 10); margin-left: 0.5rem;"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></span> <!-- 透過グレーにする -->
           </div>
           <div class="message-bubble mt-2">
-            <div class="card-text" style="color: black;"><%= message.content %></div>
+            <div class="card-text" style="color: black; white-space: pre-wrap;"><%= message.content %></div>
             <% if message.image.attached? %>
               <div class="mt-2">
                 <img class="img-fluid" src="<%= url_for(message.image) %>" style="width: 300px; height: auto;">
