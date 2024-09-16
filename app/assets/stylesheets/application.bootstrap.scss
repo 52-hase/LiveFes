@@ -119,6 +119,52 @@
   opacity: 0.7; /* ホバー時に70%の透過 */
 }
 
+/* ライブイベント一覧スタイル */
+.live-event-all {
+  border: 2px solid #1172bd;
+  background-color: rgba(44, 62, 80, 0.5);
+  color: #ecf0f1;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+/* アーティスト名タイトルのスタイル */
+.artist-title {
+  border: 2px solid #3990ad;
+  background-color: rgba(44, 62, 80, 0.5);
+  color: #ecf0f1;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  word-break: break-word;
+  white-space: normal;
+  opacity: 0.8;
+  margin-top: 20px; /* mt-5 に対応するマージン */
+}
+
+/* ライブイベントタイトルのスタイル */
+.live-event-title {
+  border: 2px solid #2a618e;
+  background-color: rgba(44, 62, 80, 0.5);
+  color: #ecf0f1;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  word-break: break-word;
+  white-space: normal;
+  opacity: 0.8;
+  margin-top: 20px; /* mt-5 に対応するマージン */
+}
+
 
 
 /* ライブルーム一覧 */
