@@ -39,11 +39,55 @@
 
 /* コメントを吹き出しにする */
 .message-bubble {
-  background-color: #f1f1f1; /* 吹き出しの背景色 */
-  border-radius: 10px; /* 吹き出しの角を丸くする */
-  padding: 10px; /* 吹き出しの内側の余白 */
+  background-color: #f8f9fa; /* 吹き出しの背景色 */
+  border-radius: 15px; /* 丸みのある角 */
+  padding: 10px 15px; /* 内側の余白 */
+  display: inline-block; /* インライン要素として表示 */
+  max-width: 100%; /* 吹き出しの最大幅 */
+  margin-top: 0.5rem; /* 上部のマージン */
   margin-left: 10px; /* アイコンとの隙間 */
-  position: relative; /* 吹き出しの位置を相対的にする */
+  position: relative; /* 相対位置 */
+}
+
+/* 吹き出しのテキスト部分 */
+.message-content {
+  color: black;
+  white-space: pre-wrap; /* 改行を保持 */
+  word-wrap: break-word; /* 長い単語の折り返し */
+  word-break: break-word; /* 長い単語の切り分け */
+}
+
+/* 画像表示部分 */
+.message-image {
+  margin-top: 0.5rem; /* 上部のマージン */
+}
+
+.message-image img {
+  max-width: 300px; /* 画像の最大幅 */
+  height: auto; /* 画像の高さは自動調整 */
+}
+
+
+/* Xのシェアボタン */
+#share-to-x {
+  background-color: #f0f0f0; /* 通常時の背景色 */
+  border: 1px solid #ccc; /* 通常時のボーダー */
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex; /* フレックスボックスを使用 */
+  align-items: center; /* アイコンとテキストを縦に中央揃え */
+  width: 200px; /* ボタンの横幅を設定 */
+  text-align: left; /* テキストを左揃えにする */
+  justify-content: center; /* コンテンツを中央揃えにする */
+  margin-left: 20px; /* 左側のマージン */
+  margin-top: 10px; /* 上側のマージン */
+}
+
+#share-to-x:hover {
+  background-color: #efeff1; /* ホバー時の背景色 */
+  border-color: #141515; /* ホバー時のボーダー色 */
+  color: rgb(14, 14, 14); /* テキスト色を変更 */
 }
 
 
