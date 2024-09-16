@@ -80,6 +80,46 @@
   color: rgb(14, 14, 14); /* テキスト色を変更 */
 }
 
+/* メッセージエリア */
+#chat-input {
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ced4da;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* 画像選択ボタン */
+#chat-image-label {
+  background-color: #16315e;
+  color: #ffffff;
+  border: 1px solid #52585e;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  transition: opacity 0.3s ease; /* ホバー時の透過をスムーズにする */
+}
+
+#chat-image-label:hover {
+  opacity: 0.8; /* ホバー時に70%の透過 */
+}
+
+/* 送信ボタン */
+#button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0 20px 20px 0;
+  padding: 0 20px;
+  transition: opacity 0.3s ease; /* ホバー時の透過をスムーズにする */
+}
+
+#button:hover {
+  opacity: 0.7; /* ホバー時に70%の透過 */
+}
+
+
 
 /* ライブルーム一覧 */
 .list-group-flush {
