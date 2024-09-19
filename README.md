@@ -32,18 +32,18 @@ Live Fes は音楽ライブ・フェスの参加者が感想や思い出を発�
 ## ◽️機能紹介
 | ログイン | ユーザー登録 |
 | :---: | :---: |
-| <img src="https://i.gyazo.com/afe419b4129d5473cc5b402b2b2b819b.png" >| <img src="https://i.gyazo.com/1ed6ce7cf8d3dc67722d0aa532dcbc55.gif" width="400"> |
+| <img src="https://i.gyazo.com/afe419b4129d5473cc5b402b2b2b819b.png" >| <img src="https://i.gyazo.com/1ed6ce7cf8d3dc67722d0aa532dcbc55.gif" > |
 | <p align="left">『メールアドレス』『パスワード』を入力してログインすることができます。<br>　また、Googleアカウントを用いてGoogleログインを行う事も可能です。</p> | <p align="left">　『名前』『メールアドレス』『パスワード』『確認用パスワード』を<br>入力してユーザー登録を行います。ユーザー登録後は、自動的に<br>ログイン処理が行われ、直ぐにサービスを利用する事が出来ます。<br>　また、Googleアカウントを用いてGoogleログインを行う事も可能です。</p> |
 
 | ライブルームの作成（チャットルーム） |全体画像|
 | :---: | :---: |
-| <img src="https://i.gyazo.com/b93afe3f67e705367315bf16c5e4d7dd.gif" width="450">|<img src="https://i.gyazo.com/7308c26d537dc9efa75827135ca9001f.jpg" width="450">|
+| <img src="https://i.gyazo.com/b93afe3f67e705367315bf16c5e4d7dd.gif" >|<img src="https://i.gyazo.com/7308c26d537dc9efa75827135ca9001f.jpg" >|
 | <p align="left">　ルーム名を入力して、ライブルームの作成を行います。<br>ライブルーム作成後は、自動的にルームに遷移される様に<br>なっています。</p> | <p align="left">・メッセージ入力フォームは画面下部に固定されています。<br>・メッセージの送信、画像の送信が可能です。<br>・"Xでライブをシェアする"からライブルームに遷移できるポストができます。</p> |
 
 
 | 音楽再生機能 |全体画像|
 | :---: | :---: |
-| <img src="https://i.gyazo.com/a2c082dff5105cb39c391c5d73a61fc3.gif" width="450">|<img src="" width="450">|
+| <img src="https://i.gyazo.com/a2c082dff5105cb39c391c5d73a61fc3.gif" >|<img src="" width="450">|
 | <p align="left">　</p> | <p align="left"></p> |
 
 
