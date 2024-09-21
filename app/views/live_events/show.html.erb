@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row justify-content-center" style="max-height: 90vh; overflow-y: auto;">
-    <div class="col-md-10 text-white text-center mt-5"></br>
+    <div class="col-md-10 text-white text-center mt-5"><br>
       <h4 class="live-event-title">
         <%= @live_event.name %>
-      </h4></br></br></br>
+      </h4><br><br><br>
       <% if @live_event.artists.any? %>
         <% @live_event.artists.each do |artist| %>
           <div class="d-flex justify-content-center">
             <%= link_to artist_musics_path(artist, live_event_id: @live_event.id), class: 'btn btn-slash' do %>
               <span><%= artist.name %></span>
             <% end %>
-          </div></br>
+          </div><br>
         <% end %>
       <% else %>
         <p>アーティストは登録されていません。</p>

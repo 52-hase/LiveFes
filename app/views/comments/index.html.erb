@@ -6,24 +6,24 @@
       </div>
     <% end %>
   </div>
-  <% if user_signed_in? %></br>
+  <% if user_signed_in? %><br>
     <div class="d-grid gap-3 justify-content-center" style="margin-top: 100px;">
       <%= link_to "/live_rooms", class: 'btn btn-slash' do %>
         <span>ライブルーム一覧</span>
       <% end %>
-      </br>
+      <br>
       <%= link_to new_live_room_path, class: 'btn btn-slash' do %>
         <span>ライブルーム作成</span>
       <% end %>
-      </br>
+      <br>
       <%= link_to live_events_path, class: 'btn btn-slash' do %>
         <span>開催ライブ一覧</span>
       <% end %>
-      </br>
+      <br>
       <%= link_to user_path(current_user), class: 'btn btn-slash' do %>
         <span>マイページ</span>
-      <% end %></br>
-    </div></br>
+      <% end %><br>
+    </div><br>
   <% else %>
     <!-- ユーザーがログインしていない時の処理 -->
     <div class="d-flex align-items-center justify-content-center mt-5">
@@ -47,7 +47,7 @@
               <span>ライブルームを見に行く</span>
             <% end %>
           </div>
-          </br>
+          <br>
           <div class="accordion-header d-flex justify-content-center" id="headingOne">
             <button class="btn btn-border accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="max-width: 300px; display: flex; justify-content: center; align-items: center; color: rgba(255, 255, 255, 0.5);">
               アプリについて
@@ -55,7 +55,7 @@
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#appDescriptionAccordion">
               <div class="accordion-body text-center">
                 <h5 style="color: rgba(255, 255, 255, 0.5);  padding: 10px; text-align: left; font-weight: 300;">
-                  Live Fes では、ライブ後の余韻を参加者同士が共有できる場を提供します。</br>チャット機能で感想や思い出を語り合い、ライブの感動を振り返りましょう。
+                  Live Fes では、ライブ後の余韻を参加者同士が共有できる場を提供します。<br>チャット機能で感想や思い出を語り合い、ライブの感動を振り返りましょう。
                 </h5>
               </div>
             </div>
@@ -77,10 +77,10 @@
               <div class="modal-body">
                 <h6 class="mt-5">・ライブルームの作成</h6>
                 <%= image_tag 'https://i.gyazo.com/9781c6a06dbee59435befb55f9a27ba9.gif', alt: 'ライブルーム作成', class: 'img-fluid mb-3' %>
-              </br></br></br></br>
+              <br><br><br><br>
                 <h6>・ライブルームで思い出を共有</h6>
                 <%= image_tag 'https://i.gyazo.com/f309a56998425c507c2882547688d38b.jpg', alt: 'ライブルーム作成', class: 'img-fluid mb-3' %>
-              </br></br></br></br>
+              <br><br><br><br>
                 <h6>・曲を聴いてライブを振り返る</h6>
                 <%= image_tag 'https://i.gyazo.com/d0464225116a9ddc0ac10edd5479c49d.gif', alt: 'ライブルーム作成', class: 'img-fluid mb-3' %>
               </div>
