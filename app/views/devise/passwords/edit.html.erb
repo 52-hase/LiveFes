@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row justify-content-center align-items-center" style="min-height: 50vh;">
     <div class="col-md-6">
-      <div class="card bg-transparent border-0 text-white"></br>
-        </br>
-        <h4 class="text-center text-white">パスワードを変更する</h4></br>
-        </br>
+      <div class="card bg-transparent border-0 text-white"><br>
+        <br>
+        <h4 class="text-center text-white">パスワードを変更する</h4><br>
+        <br>
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "form-horizontal" }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
           <%= f.hidden_field :reset_password_token %>
@@ -18,14 +18,14 @@
               <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control", style: "background-color: transparent; color: white;" %>
             </div>
           </div>
-          </br>
+          <br>
           <div class="form-group">
             <%= f.label :password_confirmation, t("新しいパスワード（確認）"), class: "col-sm-3 control-label text-white" %>
             <div class="col-sm-12">
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", style: "background-color: transparent; color: white;" %>
             </div>
           </div>
-          </br>
+          <br>
           <div class="form-group text-center" style="margin-top: 30px;">
             <%= f.submit t('devise.passwords.edit.change_password_button'), class: "btn btn-outline-secondary" %>
           </div>

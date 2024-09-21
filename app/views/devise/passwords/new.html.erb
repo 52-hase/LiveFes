@@ -4,14 +4,14 @@
       <div class="col-md-6">
         <div class="card bg-transparent border-0 text-white">
           <div class="card-body">
-            <h4 class="card-title text-center"><%= t('devise.passwords.new.forgot_your_password') %></h4></br>
+            <h4 class="card-title text-center"><%= t('devise.passwords.new.forgot_your_password') %></h4><br>
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
               <% if resource.errors.any? %>
                 <% resource.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
                 <% end %>
               <% end %>
-              </br>
+              <br>
               <div class="form-group">
                 <%= f.label :email, t('devise.passwords.new.email') %>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control bg-transparent text-white' %>
