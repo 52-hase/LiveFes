@@ -1,8 +1,8 @@
-<div class="container mt-5 d-flex flex-column align-items-center" style="background-color: #f8f9fa; padding: 100px; border-radius: 10px; margin-bottom: 80px; background-color: transparent;">
-  <h2 class="text-center mb-4" style="color: #ffffff; border: 2px solid #ffffff; padding: 10px; background-color: rgba(44, 62, 80, 0.7); border-radius: 10px;">
+<div class="container mt-5 d-flex flex-column align-items-center live-room-container">
+  <h2 class="text-center mb-4 live-room-title">
     <%= @live_room.name %>
   </h2>
-  <div id="messages" style="margin-top: 20px; width: 100%;">
+  <div id="messages" class="messages-container">
     <ul class="list-group">
       <%= render @messages %>
     </ul>

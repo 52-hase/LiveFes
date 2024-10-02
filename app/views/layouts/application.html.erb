@@ -94,7 +94,7 @@
         flex: 1;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 576px) {
       .accordion-header button {
         max-width: 100%; /* アプリにつてのボタンの幅をデバイスの幅に合わせる */
         font-size: 16px; /* フォントサイズを小さくする */
@@ -116,10 +116,18 @@
         width: 100%; /* 幅を100%に */
         height: 110px; /* 高さを100pxに設定 */
       }
-      .mb-4 {
-      margin-top: 100px; /* 上部に50pxのマージンを追加 */
-      }
+
       
+        .general-footer a {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px; /* フォントサイズを調整 */
+      }
+
+        p {
+      font-size: 12px; /* スマホサイズでフォントを小さく */
+      margin: 5px 0; /* 上下のマージンを調整 */
+      }
     }
     </style>
 
