@@ -4,6 +4,108 @@
 @import "google_signin_button";
 @import 'custom_alerts';
 
+
+
+
+/* メッセージ入力欄をレスポンシブ対応 */
+@media (max-width: 576px) {
+  #chat-input {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 15px 0 0 15px;  /* 角丸の調整 */
+  }
+  /* 送信ボタンもスマホ向けに調整 */
+  #button {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  /* 画像ボタンのラベルも小さく調整 */
+  #chat-image-label {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  /* シェアボタンの横幅を明確に設定 */
+  #share-to-x {
+    font-size: 0px;
+    padding: 3px 6px;
+    max-width: 50px;  /* 最大幅を指定（必要に応じて調整） */
+    display: block;  /* 横幅を広げるために block か inline-block を使用 */
+    text-align: center;  /* テキストを中央に揃える */
+  }
+}
+
+/* チャットルームのタイトルとメッセージ */
+.live-room-container {
+  background-color: transparent;
+  padding: 100px;
+  border-radius: 10px;
+  margin-bottom: 80px;
+  width: 100%;
+  max-width: 1200px; /* コンテナの最大幅を設定 */
+}
+.live-room-title {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  background-color: rgba(44, 62, 80, 0.7);
+  border-radius: 10px;
+  word-break: break-word;
+}
+.messages-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* チャットルームのレスポンシブ対応　タイトルとメッセージ */
+@media (max-width: 576px) {
+  .live-room-container {
+    padding: 30px 15px;
+    margin-bottom: 30px;
+  }
+
+  .live-room-title {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+
+  .messages-container {
+    margin-top: 15px;
+    margin-bottom: 50px;
+  }
+}
+
+/* 一覧 */
+@media (max-width: 575px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .live-event-all {
+    font-size: 1.5rem;  /* 必要に応じて調整 */
+  }
+
+  .btn-slash {
+    font-size: 0.9rem;  /* 必要に応じて調整 */
+    padding: 0.5rem 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  .col-md-10 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mt-5 {
+    margin-top: 2rem;  /* 上部マージンを調整 */
+  }
+}
+
+
+
+
 /* ログインメッセージ5秒 */
 .alert {
   transition: opacity 0.5s ease-out;
