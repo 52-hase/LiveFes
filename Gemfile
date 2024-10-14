@@ -86,3 +86,5 @@ gem 'omniauth-rails_csrf_protection'
 gem 'meta-tags'
 
 gem 'rspotify'
+
+gem "rubocop-rails-omakase", require: false, group: [ :development ]
