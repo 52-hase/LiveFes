@@ -3,12 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+         :omniauthable, omniauth_providers: [ :google_oauth2 ]
 
 
          has_many :live_room
          has_many :messages
-         validates :name, presence: true #これを外すと
+         validates :name, presence: true # これを外すと
          validates :name, presence: true, uniqueness: { case_sensitive: false }
 
          has_one_attached :avatar

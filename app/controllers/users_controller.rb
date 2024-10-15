@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    
-    if params[:remove_avatar] == 'on'
+
+    if params[:remove_avatar] == "on"
       @user.avatar.purge if @user.avatar.attached?
     end
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       flash[:notice] = "プロフィールが更新されました。"
       redirect_to @user
     else
-      render 'show'
+      render "show"
     end
   end
 
