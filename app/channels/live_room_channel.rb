@@ -5,22 +5,22 @@ class LiveRoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    live_room = LiveRoom.find_by(id: data['live_room_id'])
-    image_data = data['image']
-    message_content = data['message'].presence || ''
+    live_room = LiveRoom.find_by(id: data["live_room_id"])
+    image_data = data["image"]
+    message_content = data["message"].presence || ""
 
-    message = live_room.messages.new(content: message_content, user_id: data['user_id'])
+    message = live_room.messages.new(content: message_content, user_id: data["user_id"])
 
     if image_data.present?
       decoded_image = Base64.decode64(image_data)
-      message.image.attach(io: StringIO.new(decoded_image), filename: 'uploaded_image.png')
+      message.image.attach(io: StringIO.new(decoded_image), filename: "uploaded_image.png")
     end
 
     # メッセージの保存、サインインしているユーザーのコンテキストでビューをレンダリング
     message.save!
     template = ApplicationController.render_with_signed_in_user(
-      User.find(data['user_id']),
-      partial: 'messages/message',
+      User.find(data["user_id"]),
+      partial: "messages/message",
       locals: { message: message }
     )
     LiveRoomChannel.broadcast_to(live_room, template)

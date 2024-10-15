@@ -68,21 +68,23 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'devise'
+gem "devise"
 
-gem 'letter_opener_web', '~> 3.0'
+gem "letter_opener_web", "~> 3.0"
 
-gem 'dotenv-rails'
+gem "dotenv-rails"
 
-gem 'bootstrap', '~> 5.3.3'
+gem "bootstrap", "~> 5.3.3"
 
-gem 'image_processing', '~> 1.2'
+gem "image_processing", "~> 1.2"
 
-gem 'aws-sdk-s3'
+gem "aws-sdk-s3"
 
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
 
-gem 'meta-tags'
+gem "meta-tags"
 
-gem 'rspotify'
+gem "rspotify"
+
+gem "rubocop-rails-omakase", require: false, group: [ :development ]
