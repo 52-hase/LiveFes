@@ -105,6 +105,8 @@ GEM
     bootstrap (5.3.3)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
+    brakeman (6.2.1)
+      racc
     builder (3.2.4)
     capybara (3.40.0)
       addressable
@@ -417,6 +419,7 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   bootstrap (~> 5.3.3)
+  brakeman
   capybara
   cssbundling-rails
   debug
