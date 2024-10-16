@@ -88,3 +88,5 @@ gem "meta-tags"
 gem "rspotify"
 
 gem "rubocop-rails-omakase", require: false, group: [ :development ]
+
+gem 'brakeman', require: false
