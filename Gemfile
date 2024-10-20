@@ -89,4 +89,4 @@ gem "rspotify"
 
 gem "rubocop-rails-omakase", require: false, group: [ :development ]
 
-gem 'brakeman', '~> 6.2.2'
+gem "brakeman", "~> 6.2.2"
