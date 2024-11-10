@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'バリデーションチェック' do
-    it '設定したすべてのバリデーションが機能しているか' do
+    it '設定した全てのバリデーションが機能しているか' do
       user = build(:user)
       expect(user).to be_valid
     end
@@ -20,8 +20,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'emailが重複している場合、バリデーションが機能してinvalidになるか' do
-      create(:user, email: 'meigenotter@example.com')
-      user = build(:user, email: 'meigenotter@example.com')
+      create(:user, email: 'test@example.com')
+      user = build(:user, email: 'test@example.com')
       expect(user).to be_invalid
     end
 
