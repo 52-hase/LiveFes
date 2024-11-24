@@ -20,7 +20,7 @@ RSpec.describe LiveEventsController, type: :controller do
 
     it "returns a successful response" do
       # テスト用の LiveEvent レコードを作成
-      live_event = LiveEvent.create!(title: "Test Event")
+      live_event = create(:live_event)
 
       # 作成したレコードの ID を使って show アクションをリクエスト
       get :show, params: { id: live_event.id }
