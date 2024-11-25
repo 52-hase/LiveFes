@@ -28,6 +28,9 @@ RSpec.describe LiveRoomChannel, type: :channel do
 
   # speakメソッドのテスト
   describe '#speak' do
+
+    # テストの前に実行される処理（テスト用のライブルームを作成）
+    before { subscribe(live_room_id: live_room.id) }
     # チャットメッセージを送信するケース
     context 'with text message' do
       # チャットメッセージのパラメーターを設定
@@ -35,7 +38,8 @@ RSpec.describe LiveRoomChannel, type: :channel do
         {
           live_room_id: live_room.id,
           user_id: user.id,
-          message: 'これはテストです。'
+          message: 'これはテストです。',
+          image: nil
         }
       end
   
@@ -43,18 +47,27 @@ RSpec.describe LiveRoomChannel, type: :channel do
       it 'create a new message' do
         expect {
           # speakメソッドを実行する
-          subscription.speak(message_params)
+          perform(:speak, message_params)
           # Messageテーブルのレコード数が１増えることの確認
         }.to change(Message, :count).by(1)
+
+        # Messageモデルの最後のレコードを取得
+        message = Message.last
+        # 取得したmessageオブジェクトのcontent属性が "これはテストです。" と一致すること
+        expect(message.content).to eq("これはテストです。")
+        # 取得したmessageオブジェクトのimageがファイルを添付されていないこと
+        expect(message.image).not_to be_attached
       end
   
       # メッセージがブロードキャストされることを確認
       it 'broadcasts the message' do
         expect {
           # speakメソッドを実行
-          subscription.speak(message_params)
-          # ライブルームにメッセージがブロードキャストされることを確認
-        }.to have_broadcasted_to(live_room)
+          perform(:speak, message_params)
+          # ライブルームにメッセージがブロードキャストされることを確認（"これはテストです。"）
+        }.to have_broadcasted_to(live_room).with do |data|
+          expect(data).to include('<div class="message-content">これはテストです。</div>')
+        end
       end
     end
   
@@ -65,10 +78,10 @@ RSpec.describe LiveRoomChannel, type: :channel do
       # 画像付きメッセージのパラメータを設定
       let(:message_params) do
         {
-          live_room_id: live_room.id,
-          user_id: user.id,
-          message: '',
-          image: image_base64
+          "live_room_id" => live_room.id,
+          "user_id" => user.id,
+          "message" => "",
+          "image" => image_base64
         }
       end
     
@@ -81,8 +94,21 @@ RSpec.describe LiveRoomChannel, type: :channel do
         }.to change(Message, :count).by(1)
         # 作成されたメッセージを取得
         message = Message.last
+        # 空文字列であることを確認
+        expect(message.content).to eq("")
         # メッセージに画像が添付されていくことを確認
         expect(message.image).to be_attached
+      end
+
+      # メッセージと一緒に画像が送信されることを確認
+      it 'broadcasts the message with an image' do
+        expect {
+          perform(:speak, message_params)
+        # メッセージが`live_room`チャネルにブロードキャストされることを確認
+        }.to have_broadcasted_to(live_room).with do |data|
+        # メッセージと一緒に画像が送信されることを期待
+          expect(data).to include('<img')
+        end
       end
     end
   end
